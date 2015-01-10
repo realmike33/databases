@@ -1,6 +1,6 @@
 var models = require('../models');
 var bluebird = require('bluebird');
-
+var tempStorage = require('../../classes/storage').data;
 
 
 module.exports = {
@@ -12,7 +12,8 @@ module.exports = {
   users: {
     // Ditto as above
     get: function (req, res) {},
-    post: function (req, res) {}
+    post: function (req, res) {
+    }
   }
 };
 

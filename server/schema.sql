@@ -10,7 +10,8 @@ CREATE TABLE users (
 
 CREATE TABLE messages (
   userId VARCHAR(10),
-  message TEXT
+  message TEXT,
+  dateadded DATETIME
 );
 
 /* Create other tables and define schemas for them here! */
