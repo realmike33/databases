@@ -6,15 +6,32 @@ exports.data = {
   results: data
 };
 
-db.query("INSERT into messages (message, date_added) values ('YOOOOO', '2014-12-10 03:30:00')", function(err, rows){
-  if(err) throw err
-
-  db.query('SELECT * FROM messages', function(err, rows){
+data.forEach(function(obj){
+  var username = obj.username;
+  var message = obj.text;
+  db.query("insert into messages (user_id, message, date_added) values ( 'Mike', 'asodijas', '2014-12-02 03:30:00')", function(err, row){
     if(err) throw err
+    console.log(row);
+  });
+});
 
-    console.log(rows);
-  })
-})
+setTimeout(function(){
+
+db.query('SELECT * FROM messages', function(err, rows){
+  if(err) throw err
+  console.log(rows);
+});
+
+}, 5000)
+// db.query("INSERT into messages (message, date_added) values ('YOOOOO', '2014-12-10 03:30:00')", function(err, rows){
+//   if(err) throw err
+
+//   db.query('SELECT * FROM messages', function(err, rows){
+//     if(err) throw err
+
+//     console.log(rows);
+//   })
+// })
 
 
 // var setData = function(query){
