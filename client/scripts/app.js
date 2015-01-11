@@ -60,6 +60,7 @@ var appendMessage = function(user, msg, room){
 
 var getData = function(data){
   $('#message-list').empty();
+  console.log(data);
   data.results.forEach(function(obj){
     var msg = obj.text;
     var user = obj.username;
@@ -72,11 +73,11 @@ var getData = function(data){
 
 var get = function(){
   $.ajax({
-      url: 'classes/messages',
+      url: '/classes/messages',
       type: 'GET',
       success: getData,
       error: function(err){
-        console.log('you got a ' + err + ', bro');
+        console.log('you got a ', err, ', bro');
       }
     });
 };
@@ -118,7 +119,7 @@ $(document).ready(function(){
     };
 
     $.ajax({
-      url: 'classes/messages',
+      url: '/classes/messages',
       type: 'POST',
       data: JSON.stringify(message),
       contentType: 'application/json',

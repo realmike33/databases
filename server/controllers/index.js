@@ -2,7 +2,6 @@ var models = require('../models');
 var bluebird = require('bluebird');
 var tempStorage = require('../../classes/storage').data;
 
-
 module.exports = {
   messages: {
     get: function (req, res) {}, // a function which handles a get request for all messages

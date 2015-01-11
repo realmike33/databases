@@ -3,6 +3,7 @@ var models = require('./models');
 var router = require('express').Router();
 
 for (var route in models) {
+  console.log('ROUTE: '+ route);
   router.route("/" + route)
     .get(models[route].get)
     .post(models[route].post);

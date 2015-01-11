@@ -4,14 +4,15 @@ USE chat;
 
 CREATE TABLE users (
   /* Describe your table here.*/
-  id VARCHAR(10),
+  id INT,
   user VARCHAR(100)
 );
 
 CREATE TABLE messages (
-  userId VARCHAR(10),
+  id INT,
+  user_id VARCHAR(20),
   message TEXT,
-  dateadded DATETIME
+  date_added DATETIME
 );
 
 /* Create other tables and define schemas for them here! */
