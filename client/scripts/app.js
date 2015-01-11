@@ -52,7 +52,7 @@
 var appendMessage = function(user, msg, room){
  var $messageList = $('#message-list');
  if(room)
- $messageList.append(
+ $messageList.prepend(
   $('<li class="message"></li>')
   .text(user + ': ' + msg)
   )
